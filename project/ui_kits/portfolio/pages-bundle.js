@@ -939,40 +939,56 @@ const PLAN = [
     }
   },
 
-  /* 6 */ {
+  /* 6 — Criteria: Weight · Compactness · Shape */ {
     t: 'criteria',
     data: {
       pie: { a: 65, labelA: 'Equipment too heavy', labelB: 'Other barriers', title: 'Barriers to car cleaning (survey, n=30)' },
       cols: [
-        { h: 'Introduction', text: 'Criteria to evaluate success allows me to consider the functional, aesthetic, and ergonomic factors of my project. I researched different aspects and interviewed car owners to understand the design factors required for a successful product.' },
-        { h: 'Weight', text: 'Weight refers to the total mass of the kit when fully assembled. In a survey of 30 people, 65% identified "equipment too heavy and bulky" as a key barrier to car washing. The kit must be light enough to lift, carry, and operate without fatigue. Safe Work Australia highlights that heavy handheld equipment increases muscle fatigue and musculoskeletal strain.' },
-        { h: 'Compactness', text: 'Compactness refers to how efficiently the kit uses space while housing all components. Many teenage drivers live in apartments or share garages. The kit must fit in a car boot without disassembly. Design research shows compactness improves convenience and user adoption for products intended for regular use, particularly when space is limited.' },
-        { h: 'Shape', text: 'Shape refers to the overall form and geometry of the kit, including body, handles, and component arrangement. Shape influences how the product is held, balanced, and stored. A well-considered shape supports both function and ease of use. Rounded edges and clear grip areas make the kit easier to direct around windows, panels, and interior surfaces.' }
+        { h: 'Overview', text: 'Criteria to evaluate success enables me to consider the functional, aesthetic, and ergonomic factors of my project. I surveyed 30 P-plate drivers and interviewed car owners to identify the key barriers to regular car cleaning. Survey results confirmed that weight and portability are the most significant obstacles.' },
+        { h: 'Weight', text: 'Weight refers to the total mass of the kit when fully assembled. In a survey of 30 people, 65% identified "equipment too heavy and bulky to carry" as a key barrier to car washing. The kit must be light enough to lift, carry, and operate without fatigue. Safe Work Australia highlights that heavy handheld equipment increases muscle fatigue and musculoskeletal strain during repeated tasks.' },
+        { h: 'Compactness', text: 'Compactness refers to how efficiently the kit uses space while housing all required components. Many teenage drivers live in apartments or share garages with limited storage. The kit must fit in a standard car boot without disassembly. Design research shows compactness improves convenience and user adoption for products intended for regular use, particularly where space is limited.' },
+        { h: 'Shape', text: 'Shape refers to the overall form and geometry of the kit, including body, handles, and component arrangement. Shape influences how the product is held, balanced, and stored. A well-considered shape supports both function and ease of use. Rounded edges, balanced proportions, and clear grip areas make the kit easier to control around windows, panels, and interior surfaces.' }
       ],
       highlights: [
-        { h: 'Survey Finding', text: '65% of 30 P-plate drivers surveyed stated that equipment being too heavy and bulky to carry was a key barrier to washing their car more regularly.' },
-        { h: 'Weight Success Criterion', text: 'The fully assembled kit must be carried with one hand and used continuously for at least 10–15 minutes without reported fatigue or discomfort.' }
+        { h: 'Survey Finding', text: '65% of 30 P-plate drivers surveyed identified equipment being too heavy and bulky as a key barrier to washing their car more regularly.' },
+        { h: 'Weight & Compactness Criterion', text: 'The fully assembled kit must be carried with one hand and used continuously for 10–15 minutes without fatigue. It must also fit in a standard car boot without disassembly.' }
       ]
     }
   },
 
-  /* 7 */ {
+  /* 7 — Criteria: Colour · Trends · Legislation · Safety */ {
     t: 'criteria',
     data: {
       cols: [
-        { h: 'Colour', text: 'Colour influences how users perceive the product and identify functional parts. Safe Work Australia highlights that high-contrast colours improve visibility and reduce risk when operating equipment. Neutral tones (grey, black, navy) communicate durability in tools, while accent colours draw attention to key features such as controls, nozzles, and grip areas.' },
-        { h: 'Trends', text: 'The design should reflect contemporary trends in simplicity, multifunctionality, and sustainability. McKinsey & Company confirms convenience and efficiency are key drivers for younger consumers. Australian consumers increasingly prefer products that reduce water use and waste. The kit must align with minimalist aesthetic values and demonstrate environmental awareness to remain relevant.' },
-        { h: 'Legislation', text: 'Under Australian Consumer Law, products must be safe and fit for purpose. AS/NZS 60335 electrical safety standards apply to the air duster component. The ACCC requires consumer products to minimise foreseeable risks. Designing with legislation from the start reduces the risk of recall, legal issues, or product failure.' },
-        { h: 'Safety', text: 'The kit involves water flow, handheld components, and physical movement. Safe Work Australia emphasises that safety design should eliminate risks at the design stage. Secure grip areas, smooth edges, stable hose connections, and controlled output prevent slipping and loss of control. Products that feel safe and predictable are more likely to be adopted by younger, inexperienced users.' }
+        { h: 'Colour', text: 'Colour influences how users perceive the product and identify functional parts. Safe Work Australia highlights that high-contrast colours improve visibility and reduce risk when operating equipment. Neutral tones (grey, black, navy) communicate durability in tools, while accent colours draw attention to key features such as controls, nozzles, and grip areas. Colour will be evaluated through visual assessment and user surveys.' },
+        { h: 'Trends', text: 'The design should reflect contemporary trends in simplicity, multifunctionality, and sustainability. McKinsey & Company confirms convenience and efficiency are key drivers for younger consumers. Australian consumers increasingly prefer products that reduce water use and waste. The kit must align with minimalist aesthetic values and demonstrate environmental awareness to remain relevant and appealing to the target market.' },
+        { h: 'Legislation', text: 'Under Australian Consumer Law, products must be safe and fit for purpose. AS/NZS 60335 electrical safety standards apply to the air duster component. The ACCC requires consumer products to minimise foreseeable risks. Designing for legislative compliance from the start reduces the risk of recall, legal issues, or product failure. Compliance will be verified by cross-checking against ACL and Safe Work Australia guidelines.' },
+        { h: 'Safety', text: 'The kit involves water flow, handheld components, and physical movement around a vehicle. Safe Work Australia emphasises that safety design should eliminate risks at the design stage. Secure grip areas, smooth edges, stable hose connections, and controlled output prevent slipping and loss of control. Products that feel safe and predictable are more likely to be regularly adopted by younger, inexperienced users.' }
       ],
       highlights: [
-        { h: 'Environmental Impact', text: 'The kit must use noticeably less water than a typical home wash and limit excess detergent runoff, while still effectively cleaning the vehicle. Water360 reports commercial washes use 40–200L per vehicle; controlled hose attachment minimises waste.' },
-        { h: 'Materials', text: 'All materials must resist water damage, maintain structural integrity during repeated use, and not degrade when exposed to detergents and outdoor conditions. CSIRO: well-chosen polymers balance strength, low weight, and moisture resistance.' }
+        { h: 'Colour Success Standard', text: 'Functional components must be clearly visible, the product maintains a clean appearance after repeated use, and users report that the colour scheme looks appropriate and easy to understand.' },
+        { h: 'Safety Success Standard', text: 'The kit must contain no sharp edges, maintain a secure grip when wet, operate predictably, and be used without injury under normal conditions.' }
       ]
     }
   },
 
-  /* 8 */ {
+  /* 8 — Criteria: Environmental Impact · Materials */ {
+    t: 'criteria',
+    data: {
+      cols: [
+        { h: 'Criteria Summary', text: 'The criteria identified across this section — weight, compactness, shape, colour, trends, legislation, safety, environmental impact, and materials — collectively define what a successful car-cleaning kit looks like for teenage P-plate drivers. Each criterion has been evaluated for its importance, challenges, and minimum standard for success.' },
+        { h: 'Environmental Impact', text: 'The kit must minimise water consumption and reduce harmful detergent runoff into stormwater systems. ACWA reports a single home wash releases ~750mL of oil and over 100L of water. Water360 reports commercial washes use 40–200L per vehicle. The controlled hose attachment and soap-mixing mechanism aim to reduce both water consumption and chemical runoff significantly compared to traditional methods.' },
+        { h: 'Materials', text: 'Materials must be strong, water-resistant, and suitable for repeated use while remaining lightweight and affordable for the target market. Product Safety Australia requires consumer materials to be durable and safe under moisture exposure. CSIRO highlights that well-chosen polymers offer strength, low weight, and moisture resistance. Unsuitable materials could degrade, leak, or fail under pressure, leading to safety risks and poor user experience.' },
+        { h: '', text: '' }
+      ],
+      highlights: [
+        { h: 'Environmental Impact Criterion', text: 'The kit must use noticeably less water than a typical home wash and limit excess detergent runoff, while still effectively cleaning the vehicle.' },
+        { h: 'Materials Criterion', text: 'All materials must resist water damage, maintain structural integrity during repeated use, and not degrade when exposed to detergents and outdoor conditions.' }
+      ]
+    }
+  },
+
+  /* 9 */ {
     t: 'action',
     title: 'Finance Plan',
     data: {
@@ -997,7 +1013,7 @@ const PLAN = [
     }
   },
 
-  /* 9 */ {
+  /* 10 */ {
     t: 'existing',
     data: {
       items: [
@@ -1017,7 +1033,7 @@ const PLAN = [
     }
   },
 
-  /* 10 */ {
+  /* 11 */ {
     t: 'existing',
     data: {
       items: [
