@@ -18,42 +18,47 @@
 </style>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
-<script type="text/babel" src="pages.jsx"></script>
+<script src="pages-bundle.js"></script>
 </head>
 <body>
 <div id="stage"><div id="page"><div id="root"></div></div></div>
 <div class="nav">
-  <button id="prev">‹</button>
+  <button id="prev">&#8249;</button>
   <span class="lbl" id="lbl"></span>
-  <button id="next">›</button>
+  <button id="next">&#8250;</button>
 </div>
-<script type="text/babel">
-const { PLAN, renderPage } = window.EasyCleanPages;
-const TITLES = {cover:'Cover',need:'Identification of the Need',investigation:'Areas of Investigation',
-  interviews:'Interviews → Criteria',criteria:'Criteria to Evaluate Success',action:'Action, Time & Finance',
-  existing:'Exploration of Existing Designs',sketches:'Sketches',creativity:'Further Evidence of Creativity',
+<script>
+const TITLES = {
+  cover:'Cover',need:'Identification of the Need',investigation:'Areas of Investigation',
+  interviews:'Interviews → Criteria',criteria:'Criteria to Evaluate Success',
+  action:'Action, Time & Finance',existing:'Exploration of Existing Designs',
+  sketches:'Sketches',creativity:'Further Evidence of Creativity',
   consideration:'Consideration of Design Factors',testing:'Experimentation & Testing',
   justification:'Justification of Tools / Materials',practical:'Evidence of Practical Skills',
-  evaluation:'Project Evaluation',impact:'Impact on Society / Environment',final:'Final Evaluation'};
-const KEY='easyclean-portfolio-page';
-let idx=Math.min(PLAN.length-1, parseInt(localStorage.getItem(KEY)||'0',10)||0);
-const root=ReactDOM.createRoot(document.getElementById('root'));
-function fit(){
-  const s=Math.min((innerWidth-48)/1480,(innerHeight-90)/1046);
-  document.getElementById('page').style.transform=`translate(-50%,-50%) scale(${s})`;
+  evaluation:'Project Evaluation',impact:'Impact on Society / Environment',final:'Final Evaluation'
+};
+const { PLAN, renderPage } = window.EasyCleanPages;
+const KEY = 'easyclean-portfolio-page';
+let idx = Math.min(PLAN.length - 1, parseInt(localStorage.getItem(KEY) || '0', 10) || 0);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+function fit() {
+  const s = Math.min((innerWidth - 48) / 1480, (innerHeight - 90) / 1046);
+  document.getElementById('page').style.transform = 'translate(-50%,-50%) scale(' + s + ')';
 }
-function go(i){
-  idx=(i+PLAN.length)%PLAN.length;
-  localStorage.setItem(KEY,String(idx));
-  root.render(renderPage(PLAN[idx],idx));
-  document.getElementById('lbl').textContent=`${idx+1} / ${PLAN.length} · ${TITLES[PLAN[idx].t]}`;
+function go(i) {
+  idx = (i + PLAN.length) % PLAN.length;
+  localStorage.setItem(KEY, String(idx));
+  root.render(renderPage(PLAN[idx], idx));
+  document.getElementById('lbl').textContent = (idx + 1) + ' / ' + PLAN.length + ' \xB7 ' + TITLES[PLAN[idx].t];
 }
-document.getElementById('prev').onclick=()=>go(idx-1);
-document.getElementById('next').onclick=()=>go(idx+1);
-addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(idx+1);if(e.key==='ArrowLeft')go(idx-1);});
-addEventListener('resize',fit);
-fit();go(idx);
+document.getElementById('prev').onclick = function() { go(idx - 1); };
+document.getElementById('next').onclick = function() { go(idx + 1); };
+addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight') go(idx + 1);
+  if (e.key === 'ArrowLeft') go(idx - 1);
+});
+addEventListener('resize', fit);
+fit(); go(idx);
 </script>
 </body></html>
