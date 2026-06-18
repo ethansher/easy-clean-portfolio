@@ -1,0 +1,28 @@
+/* DNT Portfolio — Typography tokens */
+:root {
+  --font-display: 'Archivo', 'Arial Narrow', system-ui, sans-serif; /* headings, uppercase */
+  --font-body:    'Mulish', system-ui, -apple-system, sans-serif;   /* body + UI */
+
+  /* Type scale — tuned for landscape A4-ish portfolio pages */
+  --fs-display:  44px;  /* page hero numbers / cover */
+  --fs-title:    26px;  /* SECTION TITLE on the page header */
+  --fs-subtitle: 18px;  /* card / column heading */
+  --fs-lead:     15px;
+  --fs-body:     13.5px;
+  --fs-small:    11.5px;
+  --fs-caption:  10px;
+
+  --lh-tight: 1.05; /* @kind other */
+  --lh-snug:  1.25; /* @kind other */
+  --lh-body:  1.5;  /* @kind other */
+
+  --ls-title:   0.04em;   /* uppercase headings are tracked out */
+  --ls-label:   0.08em;
+  --ls-body:    0;        /* @kind other */
+
+  --fw-regular: 400; /* @kind font */
+  --fw-medium:  500; /* @kind font */
+  --fw-semibold:600; /* @kind font */
+  --fw-bold:    700; /* @kind font */
+  --fw-black:   800; /* @kind font */
+}

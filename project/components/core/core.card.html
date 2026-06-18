@@ -1,0 +1,44 @@
+<!-- @dsCard group="Components" viewport="700x230" name="Core — Pills & Buttons" subtitle="Capsule labels and pill action buttons" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--blue-400);padding:24px;}
+  .panel{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:22px;}
+  .grp{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+  .grp + .grp{margin-top:16px;}
+  h4{margin:0 0 4px;font-family:var(--font-display);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);}
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Pill, Button } = window.DNTPortfolioDesignSystem_899972;
+function Demo(){
+  return (
+    <div className="panel">
+      <h4>Pills</h4>
+      <div className="grp">
+        <Pill variant="cyan">Student Number</Pill>
+        <Pill variant="blue">Need</Pill>
+        <Pill variant="orange">Final Design</Pill>
+        <Pill variant="white">Draft</Pill>
+      </div>
+      <h4 style={{marginTop:18}}>Buttons</h4>
+      <div className="grp">
+        <Button variant="primary">Next page</Button>
+        <Button variant="cool">Filter</Button>
+        <Button variant="quiet">Back</Button>
+        <Button variant="primary" size="sm">Small</Button>
+        <Button variant="primary" disabled>Disabled</Button>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body></html>

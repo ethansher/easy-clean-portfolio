@@ -1,0 +1,292 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "components/data/**",
+              "components/layout/**",
+              "ui_kits/portfolio/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Archivo|Mulish))/i]",
+        "message": "Font not provided by the design system. Available: Archivo, Mulish."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BrushFrame'] > JSXAttribute > JSXIdentifier[name!=/^(?:fieldColor|frameColor|width|height|roughness|inset|seed|spatter|style|key|ref|className|style|children)$/]",
+        "message": "<BrushFrame> doesn't accept that prop. Declared props: fieldColor, frameColor, width, height, roughness, inset, seed, spatter, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|size|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: children, variant, size."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|cool|ghost|quiet)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'cool' | 'ghost' | 'quiet'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ContentCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|heading|pad|style|key|ref|className|style|children)$/]",
+        "message": "<ContentCard> doesn't accept that prop. Declared props: children, heading, pad, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DataTable'] > JSXAttribute > JSXIdentifier[name!=/^(?:columns|rows|style|key|ref|className|style|children)$/]",
+        "message": "<DataTable> doesn't accept that prop. Declared props: columns, rows, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='HighlightBox'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|label|style|key|ref|className|style|children)$/]",
+        "message": "<HighlightBox> doesn't accept that prop. Declared props: children, label, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pill'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|style|key|ref|className|style|children)$/]",
+        "message": "<Pill> doesn't accept that prop. Declared props: children, variant, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionTitle'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|badge|size|align|style|key|ref|className|style|children)$/]",
+        "message": "<SectionTitle> doesn't accept that prop. Declared props: children, badge, size, align, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionTitle'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|center|right)$/]",
+        "message": "<SectionTitle> align must be one of 'left' | 'center' | 'right'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "BrushFrame": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "ContentCard": {
+        "replaces": []
+      },
+      "DataTable": {
+        "replaces": []
+      },
+      "HighlightBox": {
+        "replaces": []
+      },
+      "Pill": {
+        "replaces": []
+      },
+      "SectionTitle": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent",
+      "--accent-cool",
+      "--blue-100",
+      "--blue-200",
+      "--blue-300",
+      "--blue-400",
+      "--blue-50",
+      "--blue-500",
+      "--blue-600",
+      "--blue-700",
+      "--border-card",
+      "--border-table",
+      "--brush-freq",
+      "--brush-rough",
+      "--canvas",
+      "--cyan-300",
+      "--cyan-400",
+      "--cyan-500",
+      "--font-body",
+      "--font-display",
+      "--frame-inset",
+      "--fs-body",
+      "--fs-caption",
+      "--fs-display",
+      "--fs-lead",
+      "--fs-small",
+      "--fs-subtitle",
+      "--fs-title",
+      "--fw-black",
+      "--fw-bold",
+      "--fw-medium",
+      "--fw-regular",
+      "--fw-semibold",
+      "--grid-gap",
+      "--ink-500",
+      "--ink-700",
+      "--ink-900",
+      "--lh-body",
+      "--lh-snug",
+      "--lh-tight",
+      "--link",
+      "--ls-body",
+      "--ls-label",
+      "--ls-title",
+      "--orange-300",
+      "--orange-400",
+      "--orange-500",
+      "--page-pad",
+      "--paper",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--radius-xl",
+      "--shadow-card",
+      "--shadow-frame",
+      "--shadow-raised",
+      "--slate-100",
+      "--slate-200",
+      "--slate-300",
+      "--slate-400",
+      "--space-0",
+      "--space-1",
+      "--space-10",
+      "--space-12",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-8",
+      "--surface-band",
+      "--surface-canvas",
+      "--surface-card",
+      "--surface-frame",
+      "--surface-highlight",
+      "--surface-page",
+      "--text-body",
+      "--text-heading",
+      "--text-muted",
+      "--text-on-card-accent",
+      "--text-on-page"
+    ],
+    "tokenKinds": {
+      "--blue-50": "color",
+      "--blue-100": "color",
+      "--blue-200": "color",
+      "--blue-300": "color",
+      "--blue-400": "color",
+      "--blue-500": "color",
+      "--blue-600": "color",
+      "--blue-700": "color",
+      "--cyan-300": "color",
+      "--cyan-400": "color",
+      "--cyan-500": "color",
+      "--orange-300": "color",
+      "--orange-400": "color",
+      "--orange-500": "color",
+      "--ink-900": "color",
+      "--ink-700": "color",
+      "--ink-500": "color",
+      "--slate-400": "color",
+      "--slate-300": "color",
+      "--slate-200": "color",
+      "--slate-100": "color",
+      "--paper": "color",
+      "--canvas": "color",
+      "--surface-page": "color",
+      "--surface-canvas": "color",
+      "--surface-card": "color",
+      "--surface-frame": "color",
+      "--surface-highlight": "color",
+      "--surface-band": "color",
+      "--text-on-page": "font",
+      "--text-heading": "font",
+      "--text-body": "font",
+      "--text-muted": "font",
+      "--text-on-card-accent": "font",
+      "--accent": "color",
+      "--accent-cool": "color",
+      "--link": "color",
+      "--border-card": "color",
+      "--border-table": "color",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--fs-display": "spacing",
+      "--fs-title": "spacing",
+      "--fs-subtitle": "spacing",
+      "--fs-lead": "spacing",
+      "--fs-body": "spacing",
+      "--fs-small": "spacing",
+      "--fs-caption": "spacing",
+      "--lh-tight": "other",
+      "--lh-snug": "other",
+      "--lh-body": "other",
+      "--ls-title": "spacing",
+      "--ls-label": "spacing",
+      "--ls-body": "other",
+      "--fw-regular": "font",
+      "--fw-medium": "font",
+      "--fw-semibold": "font",
+      "--fw-bold": "font",
+      "--fw-black": "font",
+      "--space-0": "spacing",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-8": "spacing",
+      "--space-10": "spacing",
+      "--space-12": "spacing",
+      "--page-pad": "spacing",
+      "--frame-inset": "spacing",
+      "--grid-gap": "spacing",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-xl": "radius",
+      "--radius-pill": "radius",
+      "--shadow-card": "shadow",
+      "--shadow-raised": "shadow",
+      "--shadow-frame": "shadow",
+      "--brush-rough": "other",
+      "--brush-freq": "other"
+    },
+    "fontFamilies": [
+      "Archivo",
+      "Mulish"
+    ]
+  }
+}

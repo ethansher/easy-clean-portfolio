@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Portfolio Section Page" description="Blue brush-frame portfolio page — editable heading, body card and highlight box" -->
+<helmet><script src="./ds-base.js"></script></helmet>
+<x-import component-from-global-scope="DNTPortfolioDesignSystem_899972.PortfolioPage" title="Identification of the Need" badge="02" hint-size="1480px,1046px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;flex:1;min-height:0">
+    <div style="display:flex;flex-direction:column;gap:14px;min-height:0">
+      <x-import component-from-global-scope="DNTPortfolioDesignSystem_899972.ContentCard" heading="The problem" style="flex:1" hint-size="100%,100%">Teenage P-plate drivers take pride in their first car but juggle school, work, sport and social commitments, so cleaning is delayed or done poorly.</x-import>
+      <x-import component-from-global-scope="DNTPortfolioDesignSystem_899972.ContentCard" heading="Who it's for" style="flex:1" hint-size="100%,100%">16–20 year-old provisional drivers on a tight budget with limited storage and no pressure-washer.</x-import>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;min-height:0">
+      <x-import component-from-global-scope="DNTPortfolioDesignSystem_899972.HighlightBox" label="Key insight" hint-size="100%,100%">78% wash their car less than once a month — time is the #1 barrier.</x-import>
+      <x-import component-from-global-scope="DNTPortfolioDesignSystem_899972.ContentCard" heading="Opportunity" style="flex:1" hint-size="100%,100%">One compact, affordable kit — foam soap, air duster, scraper and microfibre towel — that lives in the boot and makes a home clean quick.</x-import>
+    </div>
+  </div>
+</x-import>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- @dsCard group="Components" viewport="700x260" name="Data — Research table" subtitle="DataTable with electric-blue header band" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>body{margin:0;font-family:var(--font-body);background:var(--blue-400);padding:22px;}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { DataTable } = window.DNTPortfolioDesignSystem_899972;
+function Demo(){
+  return (
+    <DataTable
+      columns={["Area of investigation","Findings","Source","Impact"]}
+      rows={[
+        ["Time pressure","78% wash less than monthly","Survey (n=40)","High"],
+        ["Cost","Avg $18 per commercial wash","Product analysis","Medium"],
+        ["Water use","Hose washing wastes ~100L","Secondary research","High"],
+        ["Storage","Boot/garage space is limited","Interviews","Medium"],
+      ]}
+    />
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body></html>

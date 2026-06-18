@@ -1,0 +1,18 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Radii & shadows" subtitle="Card rounding (--radius-lg) and soft float shadows" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--blue-400);padding:22px;color:var(--ink-900);}
+  .row{display:flex;gap:18px;align-items:center;}
+  .box{background:#fff;width:120px;height:90px;display:flex;align-items:flex-end;padding:8px;box-sizing:border-box;}
+  .lab{font-size:10px;font-weight:700;color:var(--ink-700);}
+</style></head>
+<body>
+  <div class="row">
+    <div class="box" style="border-radius:var(--radius-sm);box-shadow:var(--shadow-card)"><span class="lab">sm 8 · card</span></div>
+    <div class="box" style="border-radius:var(--radius-lg);box-shadow:var(--shadow-card)"><span class="lab">lg 20 · card</span></div>
+    <div class="box" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-raised)"><span class="lab">xl 28 · raised</span></div>
+    <div class="box" style="border-radius:var(--radius-pill);box-shadow:var(--shadow-frame);width:90px"><span class="lab">pill</span></div>
+  </div>
+</body></html>

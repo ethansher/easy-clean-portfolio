@@ -1,0 +1,56 @@
+/* DNT Portfolio — Color tokens
+   Sampled from the major-work portfolio template:
+   page field #6AB9D9, header band #00ADEF, white brush frame, orange pie accent. */
+:root {
+  /* ---- Brand blue (sky) scale ---- */
+  --blue-50:  #eef7fb;
+  --blue-100: #d3ecf5;
+  --blue-200: #aadcec;
+  --blue-300: #82cbe3;
+  --blue-400: #6ab9d9;   /* page field — signature colour */
+  --blue-500: #4aa7cd;
+  --blue-600: #2f8fbb;
+  --blue-700: #25728f;
+
+  /* ---- Electric blue (accent / header bands, links) ---- */
+  --cyan-300: #5ccbf4;
+  --cyan-400: #00adef;   /* table header band, active accents */
+  --cyan-500: #0090c9;
+
+  /* ---- Orange (data accent — pie charts, callouts) ---- */
+  --orange-300: #ffb163;
+  --orange-400: #f5821f; /* primary accent */
+  --orange-500: #d96c0c;
+
+  /* ---- Ink / neutrals ---- */
+  --ink-900: #10303d;    /* darkest text on light */
+  --ink-700: #244a59;
+  --ink-500: #4f6b78;
+  --slate-400: #818285;  /* placeholder / muted text bars */
+  --slate-300: #b6bcc0;
+  --slate-200: #dde2e5;
+  --slate-100: #eef1f3;
+  --paper:     #ffffff;  /* card + brush frame */
+  --canvas:    #cfd2d4;  /* neutral backdrop behind a page */
+
+  /* ============ Semantic aliases ============ */
+  --surface-page:      var(--blue-400);   /* the blue portfolio page field */
+  --surface-canvas:    var(--canvas);     /* grey behind the page */
+  --surface-card:      var(--paper);      /* white content card */
+  --surface-frame:     var(--paper);      /* painted brush border */
+  --surface-highlight: var(--blue-300);   /* light-blue emphasis box inside a page */
+  --surface-band:      var(--cyan-400);   /* table header / divider band */
+
+  --text-on-page:   var(--paper);         /* white text on blue field */
+  --text-heading:   var(--paper);         /* section titles */
+  --text-body:      var(--ink-900);       /* body copy on white cards */
+  --text-muted:     var(--slate-400);     /* captions, placeholder */
+  --text-on-card-accent: var(--cyan-500);
+
+  --accent:         var(--orange-400);
+  --accent-cool:    var(--cyan-400);
+  --link:           var(--cyan-500);
+
+  --border-card:    var(--slate-200);
+  --border-table:   var(--slate-300);
+}

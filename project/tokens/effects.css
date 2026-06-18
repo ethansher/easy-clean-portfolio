@@ -1,0 +1,18 @@
+/* DNT Portfolio — Radii, shadows & effects */
+:root {
+  /* Corner radii — content cards are generously rounded in the template */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;     /* white content cards */
+  --radius-xl: 28px;     /* highlight boxes */
+  --radius-pill: 999px;
+
+  /* Shadows — soft, low-contrast; cards float gently on the blue field */
+  --shadow-card: 0 2px 8px rgba(16,48,61,0.12);
+  --shadow-raised: 0 6px 18px rgba(16,48,61,0.18);
+  --shadow-frame: 0 4px 22px rgba(16,48,61,0.22);
+
+  /* Painted brush edge — feTurbulence displacement settings used by BrushFrame */
+  --brush-rough: 7;    /* @kind other */  /* displacement scale (px) */
+  --brush-freq: 0.022; /* @kind other */  /* turbulence base frequency */
+}
