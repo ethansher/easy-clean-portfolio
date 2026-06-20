@@ -238,15 +238,20 @@ function CoverPage({
   }, "Design & Technology"), /*#__PURE__*/React.createElement(DNT.Pill, {
     variant: "orange"
   }, "Major Work Portfolio")),
-  /* centred content */
+  /* centred content — absolutely positioned so it truly sits in the middle */
   /*#__PURE__*/React.createElement("div", {
     style: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
       textAlign: 'center',
       zIndex: 1,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      gap: 22
+      gap: 24,
+      width: 800
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: "../../assets/logo.svg",
