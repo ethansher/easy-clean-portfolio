@@ -185,26 +185,74 @@ function CoverPage({
     title: null,
     seed: 3,
     contentStyle: {
-      padding: 60,
-      justifyContent: 'space-between'
+      padding: 0,
+      justifyContent: 'center',
+      alignItems: 'center'
     }
-  }), /*#__PURE__*/React.createElement("div", {
+  }),
+  /* decorative inner border frame */
+  /*#__PURE__*/React.createElement("div", {
     style: {
-      display: 'flex',
-      justifyContent: 'flex-end'
+      position: 'absolute',
+      inset: 44,
+      border: '3px solid var(--cyan-400)',
+      borderRadius: 18,
+      pointerEvents: 'none',
+      zIndex: 0
+    }
+  }),
+  /* corner accent lines */
+  /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 52,
+      border: '1px solid rgba(0,173,239,0.25)',
+      borderRadius: 12,
+      pointerEvents: 'none',
+      zIndex: 0
+    }
+  }),
+  /* student number — top right inside border */
+  /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 66,
+      right: 70,
+      zIndex: 1
     }
   }, /*#__PURE__*/React.createElement(DNT.Pill, {
     variant: "cyan"
-  }, "Student Number \xB7 34933249")), /*#__PURE__*/React.createElement("div", {
+  }, "Student Number \xB7 34933249")),
+  /* pills — bottom left inside border */
+  /*#__PURE__*/React.createElement("div", {
     style: {
-      textAlign: 'center'
+      position: 'absolute',
+      bottom: 66,
+      left: 70,
+      display: 'flex',
+      gap: 10,
+      zIndex: 1
+    }
+  }, /*#__PURE__*/React.createElement(DNT.Pill, {
+    variant: "blue"
+  }, "Design & Technology"), /*#__PURE__*/React.createElement(DNT.Pill, {
+    variant: "orange"
+  }, "Major Work Portfolio")),
+  /* centred content */
+  /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: 'center',
+      zIndex: 1,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 22
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: "../../assets/logo.svg",
     alt: "Easy Clean",
     style: {
-      width: 460,
-      marginBottom: 26
+      width: 500
     }
   }), /*#__PURE__*/React.createElement("h1", {
     style: {
@@ -213,29 +261,19 @@ function CoverPage({
       fontWeight: 800,
       textTransform: 'uppercase',
       letterSpacing: '0.02em',
-      fontSize: 58,
+      fontSize: 62,
       color: INK,
       lineHeight: 1.03
     }
   }, "Major Design Project"), /*#__PURE__*/React.createElement("p", {
     style: {
-      margin: '18px auto 0',
-      maxWidth: 760,
-      fontSize: 21,
+      margin: 0,
+      maxWidth: 720,
+      fontSize: 20,
       color: 'var(--ink-700)',
-      lineHeight: 1.5
+      lineHeight: 1.6
     }
-  }, "A compact, affordable, water-smart car-cleaning kit designed for teenage P-plate drivers and their first car.")), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      justifyContent: 'center',
-      gap: 12
-    }
-  }, /*#__PURE__*/React.createElement(DNT.Pill, {
-    variant: "blue"
-  }, "Design & Technology"), /*#__PURE__*/React.createElement(DNT.Pill, {
-    variant: "orange"
-  }, "Major Work Portfolio")));
+  }, "A compact, affordable, water-smart car-cleaning kit designed for teenage P-plate drivers and their first car.")));
 }
 
 /* ============ STANDARD DENSE PAGE (text on blue) ============ */
