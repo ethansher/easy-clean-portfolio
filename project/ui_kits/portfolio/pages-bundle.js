@@ -53,7 +53,9 @@ function Body({
       margin: '6px 0 0',
       fontSize: 12,
       lineHeight: 1.5,
-      color
+      color,
+      whiteSpace: 'pre-wrap',
+      overflow: 'hidden'
     }
   }, text);
   return /*#__PURE__*/React.createElement(Lines, {
@@ -289,8 +291,11 @@ function StandardDensePage({
   data = {}
 }) {
   const cols = data.cols || [{}, {}, {}, {}];
-  const highlights = data.highlights || [{}, {}];
-  const bottom = data.bottom || [{}, {}, {}];
+  const highlights = data.highlights || [];
+  const bottom = data.bottom || [];
+  const rightCols = [cols[1], cols[2], cols[3]].filter(c => c && (c.h || c.text));
+  const hasHighlights = highlights.some(hl => hl && hl.text);
+  const hasBottom = bottom.some(b => b && b.text);
   return /*#__PURE__*/React.createElement(PortfolioPage, _extends({}, A3, {
     title: title,
     badge: badge,
@@ -301,47 +306,54 @@ function StandardDensePage({
       gridTemplateColumns: '1.05fr 3fr',
       gap: 20,
       flex: 1,
-      minHeight: 0
+      minHeight: 0,
+      overflow: 'hidden'
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  },
+  /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
       gap: 8,
-      minHeight: 0
+      minHeight: 0,
+      overflow: 'hidden'
     }
   }, /*#__PURE__*/React.createElement(ColHeading, null, cols[0].h), /*#__PURE__*/React.createElement(Body, {
     text: cols[0].text,
     lines: 16
   }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      flex: 1
-    }
+    style: { flex: 1 }
   }), data.pie ? /*#__PURE__*/React.createElement(Pie, data.pie) : /*#__PURE__*/React.createElement(ImageSlot, {
     label: data.smallLabel || 'Image',
-    style: {
-      height: 150
-    }
-  })), /*#__PURE__*/React.createElement("div", {
+    style: { height: 150 }
+  })),
+  /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
       gap: 14,
-      minHeight: 0
+      minHeight: 0,
+      overflow: 'hidden'
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  },
+  /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr 1fr',
-      gap: 18
+      gridTemplateColumns: 'repeat(' + (rightCols.length || 1) + ', 1fr)',
+      gap: 18,
+      flex: hasHighlights ? 'none' : 1,
+      minHeight: 0,
+      overflow: 'hidden'
     }
-  }, [1, 2, 3].map(i => /*#__PURE__*/React.createElement("div", {
-    key: i
-  }, /*#__PURE__*/React.createElement(ColHeading, null, cols[i] && cols[i].h), /*#__PURE__*/React.createElement(Body, {
-    text: cols[i] && cols[i].text,
+  }, rightCols.map((col, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: { overflow: 'hidden', minHeight: 0 }
+  }, /*#__PURE__*/React.createElement(ColHeading, null, col.h), /*#__PURE__*/React.createElement(Body, {
+    text: col.text,
     lines: 8,
     start: i * 2
-  })))), /*#__PURE__*/React.createElement("div", {
+  })))),
+  hasHighlights && /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: '1fr 2fr',
@@ -358,10 +370,9 @@ function StandardDensePage({
       minHeight: 0
     }
   }, /*#__PURE__*/React.createElement(ColHeading, null, hl.h), /*#__PURE__*/React.createElement(HighlightBox, {
-    style: {
-      flex: 1
-    }
-  }, hl.text || '')))), /*#__PURE__*/React.createElement("div", {
+    style: { flex: 1 }
+  }, hl.text || '')))),
+  hasBottom && /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr 1fr',
@@ -862,10 +873,7 @@ const PLAN = [
         { h: 'Motivation Behind the Project', text: 'As a younger driver myself with limited time to wash my car, it often ends up dirty inside and out. Having a clean car is important to me. It makes me feel clear-headed, proud, and comfortable while driving, especially when I have passengers.\n\nOwning my first car was a massive accomplishment and a sign of freedom and independence. However, I quickly understood that keeping it clean takes time, effort, and money, which most teenagers don\'t have. After balancing school, sport, work, and tutors, I struggled to maintain my car regularly. The untidiness made me think about how many other young drivers deal with the same issues. To support this, I plan to conduct short surveys with P-plate drivers at my school to collect data on how often they wash their cars, how much time they have, and what stops them from cleaning their cars more regularly. This primary research will give real-world evidence to back up my observations.\n\nThat personal experience pushed me to create something practical to solve problems like mine for people around my age. I wanted to make a cleaning kit that makes washing your car quick, affordable, and a more enjoyable experience, so it doesn\'t feel like a chore. I am also passionate about decreasing waste of water and chemicals, so developing an eco-friendly design became a key part of my goal.\n\nThrough this project, I am not just building something useful for myself but also learning about design, sustainability, and user-focused innovation. It inspires me to create an answer to these problems that truly helps others, especially younger drivers like myself who also take pride in their cars inside and out.' },
         { h: '', text: '' }
       ],
-      highlights: [
-        { h: 'ACWA Research Findings', text: 'A typical home wash uses over 100 litres of water and generates ~750 mL of oily, polluted sludge per wash. Driveway runoff goes directly into local waterways, harming aquatic ecosystems (ACWA, 2023). Home washing is less water-efficient than commercial car washes.' },
-        { h: 'Star Car Wash — Wash Duration', text: 'Washing a car can take anywhere from 30 minutes to an hour and a half. Star Car Wash lists basic washes at 25–45 minutes and detailed washes at 60–90 minutes — making traditional cleaning impractical for busier people, especially teenagers juggling school, sport, and work.' }
-      ]
+      highlights: []
     }
   },
 
@@ -878,10 +886,7 @@ const PLAN = [
         { h: 'Who Will Use the Product', text: 'Young drivers, students, and everyday Australians who want a clean car without wasting time, effort, or money will use this product. It appeals to a broad audience, from environmentally conscious teenagers to busy working adults who value convenience, sustainability, and affordability in their daily routines.' },
         { h: '', text: '' }
       ],
-      highlights: [
-        { h: 'Gabriel Vargas — Meguiar\'s Australia', text: '"Absolutely, something that can do it all, and if it can do it all well, certainly has a seat in the car care industry." — Technical Support Specialist, Meguiar\'s Australia' },
-        { h: 'Doron Evian — P-plate Driver, Age 17', text: '"As I\'m still in school, it\'s hard to keep my car clean. Between tutoring, sport, and homework, I barely have any time, and when I do, I just want to hang out with friends instead of spending over an hour washing my car."' }
-      ]
+      highlights: []
     }
   },
 
